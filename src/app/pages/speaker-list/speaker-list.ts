@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ActionSheetController } from '@ionic/angular';
 
 import { ConferenceData } from '../../providers/conference-data';
@@ -17,7 +16,6 @@ export class SpeakerListPage {
   constructor(
     public actionSheetCtrl: ActionSheetController,
     public confData: ConferenceData,
-    public inAppBrowser: InAppBrowser,
     public router: Router
   ) {}
 
@@ -34,13 +32,6 @@ export class SpeakerListPage {
   goToSpeakerDetail(speaker: any) {
     this.router.navigateByUrl(
       `app/tabs/(speakers:speaker-details/${speaker.id})`
-    );
-  }
-
-  goToSpeakerTwitter(speaker: any) {
-    this.inAppBrowser.create(
-      `https://twitter.com/${speaker.twitter}`,
-      '_blank'
     );
   }
 

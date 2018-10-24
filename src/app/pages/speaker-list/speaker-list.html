@@ -36,7 +36,7 @@
 
             <ion-row no-padding justify-content-center>
               <ion-col text-left size="4">
-                <ion-button fill="clear" size="small" color="primary" (click)="goToSpeakerTwitter(speaker)">
+                <ion-button fill="clear" size="small" color="primary" [href]="'https://twitter.com/' + speaker.twitter">
                   <ion-icon name="logo-twitter" slot="start"></ion-icon>
                   Tweet
                 </ion-button>
