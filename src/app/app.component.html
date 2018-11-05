@@ -22,6 +22,16 @@
             </ion-item>
 
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item button (click)="buyTicket()">
+              <ion-icon slot="start" [name]="'cart'"></ion-icon>
+              <ion-label>
+                Buy Ticket
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+
         </ion-list>
 
       </ion-content>

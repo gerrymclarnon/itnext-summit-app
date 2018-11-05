@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Events, MenuController, Platform } from '@ionic/angular';
+import { buyTicket } from './utils/ticket-sale';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { Events, MenuController, Platform } from '@ionic/angular';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  buyTicket = buyTicket;
+
   appPages = [
     {
       title: 'Schedule',
