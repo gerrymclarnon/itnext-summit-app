@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 
 import { UserData } from './user-data';
 
@@ -145,9 +145,7 @@ export class ConferenceData {
     return this.load().pipe(
       map((data: any) => {
         return data.speakers.sort((a: any, b: any) => {
-          const aName = a.name.split(' ').pop();
-          const bName = b.name.split(' ').pop();
-          return aName.localeCompare(bName);
+          return a.name.localeCompare(b.name);
         });
       })
     );
@@ -174,6 +172,50 @@ export class ConferenceData {
       map((data: any) => {
         return data.date;
       }),
+    );
+  }
+
+  selectSessions(data: any) {
+    return data.schedule[0].groups.map((group: any) => group.sessions).reduce((prev, curr) => [...prev, ...curr], []);
+  }
+
+  getSessionById(sessionId: string) {
+    return this.load().pipe(
+      map(this.selectSessions),
+      map((sessions: any) => sessions.filter(session => session.id === sessionId)),
+      tap(console.log),
+      map(session => session[0])
+    );
+  }
+
+  getSpeakerById(speakerId: string) {
+    return this.getSpeakers().pipe(
+      map((speakers: any) => {
+        return speakers.filter((speaker) => speaker.id === speakerId);
+      }),
+      map(speakers => speakers[0]),
+    );
+  }
+
+  getSpeakerByName(speakerName: string) {
+    return this.getSpeakers().pipe(
+      map((speakers: any) => {
+        return speakers.filter((speaker) => speaker.name === speakerName);
+      }),
+      map(speakers => speakers[0]),
+    );
+  }
+
+  getSpeakerNameById(speakerId: string) {
+    return this.getSpeakerById(speakerId).pipe(
+      map((speaker: any) => speaker.name)
+    );
+  }
+
+  getSessionsBySpeakerName(speakerName: string) {
+    return this.load().pipe(
+      map(map(this.selectSessions)),
+      filter((session: any) => session.speakerNames.includes(speakerName)),
     );
   }
 }

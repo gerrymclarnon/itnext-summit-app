@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button text="Speakers"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{speaker?.name}}</ion-title>
+    <ion-title *ngIf="speaker$ | async as speaker">{{speaker.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="speaker-detail">
-  <div text-center *ngIf="speaker">
+  <div text-center *ngIf="speaker$ | async as speaker">
     <img [src]="speaker.profilePic" [alt]="speaker.name">
     <br>
 
@@ -17,5 +17,5 @@
     </ion-button>
   </div>
 
-  <p>{{speaker?.about}}</p>
+  <p *ngIf="speaker$ | async as speaker">{{speaker.about}}</p>
 </ion-content>
