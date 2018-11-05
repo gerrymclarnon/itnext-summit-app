@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConferenceData } from '../../providers/conference-data';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { openSpeakerTwitter } from '../../utils/social-engagement';
 
 
 @Component({
@@ -13,6 +13,7 @@ import { tap } from 'rxjs/operators';
 })
 export class SpeakerDetailPage {
   speaker$: Observable<any>;
+  openSpeakerTwitter = openSpeakerTwitter;
 
   constructor(
     private dataProvider: ConferenceData,
@@ -23,10 +24,6 @@ export class SpeakerDetailPage {
   ionViewWillEnter() {
     const speakerId = this.route.snapshot.paramMap.get('speakerId');
     this.speaker$ = this.dataProvider.getSpeakerById(speakerId);
-  }
-
-  openSpeakerTwitter(speaker: any) {
-    window.open(`https://twitter.com/${speaker.twitter}`, '_blank');
   }
 
   goToSessionDetail(session: any) {

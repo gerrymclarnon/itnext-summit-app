@@ -1,6 +1,6 @@
 {
-  "date": "2018-11-14",
   "schedule": [{
+    "date": "2018-11-14",
     "groups": [{
       "time": "8:00",
       "sessions": [{
@@ -242,7 +242,7 @@
     "id": "4"
   }, {
     "name": "Andrei Chernyshev",
-    "profilePic": "assets/img/speakers/matteo-collina.jpg",
+    "profilePic": "assets/img/speakers/andrei-chernyshev.jpg",
     "twitter": "gimlet2",
     "about": "Andrei is a senior software engineer at Outfittery, a company providing relevant fashion to men, with the help of intelligent algorithms and machine learning. He’s a huge Kotlin enthusiast and advocate, an active member of the Kotlin User Group Berlin, and is always ready to talk about technologies.",
     "company": "Outfittery",

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { UserData } from './user-data';
 
@@ -170,7 +170,7 @@ export class ConferenceData {
   getDate() {
     return this.load().pipe(
       map((data: any) => {
-        return data.date;
+        return data.schedule[0].date;
       }),
     );
   }
@@ -183,7 +183,6 @@ export class ConferenceData {
     return this.load().pipe(
       map(this.selectSessions),
       map((sessions: any) => sessions.filter(session => session.id === sessionId)),
-      tap(console.log),
       map(session => session[0])
     );
   }
