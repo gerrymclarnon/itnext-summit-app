@@ -35,22 +35,16 @@
             </ion-card-content>
 
             <ion-row no-padding justify-content-center>
-              <ion-col text-left size="4">
-                <ion-button fill="clear" size="small" color="primary" [href]="'https://twitter.com/' + speaker.twitter">
+              <ion-col text-center size="6">
+                <ion-button fill="clear" size="small" color="primary" (click)="openSpeakerTwitter(speaker)">
                   <ion-icon name="logo-twitter" slot="start"></ion-icon>
                   Tweet
                 </ion-button>
               </ion-col>
-              <ion-col text-center size="4">
+              <ion-col text-center size="6">
                 <ion-button fill="clear" size="small" color="primary" (click)="openSpeakerShare(speaker)">
                   <ion-icon name="share-alt" slot="start"></ion-icon>
                   Share
-                </ion-button>
-              </ion-col>
-              <ion-col text-right size="4">
-                <ion-button fill="clear" size="small" color="primary" (click)="openContact(speaker)">
-                  <ion-icon name="chatboxes" slot="start"></ion-icon>
-                  Contact
                 </ion-button>
               </ion-col>
             </ion-row>

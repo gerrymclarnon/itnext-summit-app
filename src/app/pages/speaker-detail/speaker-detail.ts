@@ -33,6 +33,10 @@ export class SpeakerDetailPage {
 
   }
 
+  openSpeakerTwitter(speaker: any) {
+    window.open(`https://twitter.com/${speaker.twitter}`, '_blank');
+  }
+
   goToSessionDetail(session: any) {
     this.router.navigateByUrl(`app/tabs/(schedule:session/${session.id})`);
   }

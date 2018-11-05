@@ -12,14 +12,8 @@
     <img [src]="speaker.profilePic" [alt]="speaker.name">
     <br>
 
-    <ion-button fill="clear" size="small" color="twitter">
+    <ion-button fill="clear" size="small" color="twitter" (click)="openSpeakerTwitter(speaker)">
       <ion-icon name="logo-twitter" slot="icon-only"></ion-icon>
-    </ion-button>
-    <ion-button fill="clear" size="small" color="github">
-      <ion-icon name="logo-github" slot="icon-only"></ion-icon>
-    </ion-button>
-    <ion-button fill="clear" size="small" color="instagram">
-      <ion-icon name="logo-instagram" slot="icon-only"></ion-icon>
     </ion-button>
   </div>
 

@@ -35,6 +35,10 @@ export class SpeakerListPage {
     );
   }
 
+  openSpeakerTwitter(speaker: any) {
+    window.open(`https://twitter.com/${speaker.twitter}`, '_blank');
+  }
+
   async openSpeakerShare(speaker: any) {
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Share ' + speaker.name,
@@ -61,32 +65,6 @@ export class SpeakerListPage {
         {
           text: 'Cancel',
           role: 'cancel'
-        }
-      ]
-    });
-
-    await actionSheet.present();
-  }
-
-  async openContact(speaker: any) {
-    const mode = 'ios'; // this.config.get('mode');
-
-    const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Contact ' + speaker.name,
-      buttons: [
-        {
-          text: `Email ( ${speaker.email} )`,
-          icon: mode !== 'ios' ? 'mail' : null,
-          handler: () => {
-            window.open('mailto:' + speaker.email);
-          }
-        },
-        {
-          text: `Call ( ${speaker.phone} )`,
-          icon: mode !== 'ios' ? 'call' : null,
-          handler: () => {
-            window.open('tel:' + speaker.phone);
-          }
         }
       ]
     });
