@@ -1,13 +1,17 @@
 .about-header {
-  background-color: var(--ion-color-dark);
+  background: var(--ion-color-dark) url('../../../assets/img/about.jpg');
+  background-size: cover;
   padding: 16px;
   width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
 }
 
 .about-header img {
-  max-width: 200px;
-  padding: 25px 5px 20px 0;
+  max-width: 300px;
+  padding: 25px;
 }
 
 .about-info p {

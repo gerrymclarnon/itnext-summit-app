@@ -1,6 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConferenceData } from '../../providers/conference-data';
+import { Observable } from 'rxjs';
+import { openSpeakerTwitter } from '../../utils/social-engagement';
+import { Speaker } from '../../providers/conference.model';
 
 
 @Component({
@@ -10,7 +13,8 @@ import { ConferenceData } from '../../providers/conference-data';
   encapsulation: ViewEncapsulation.None
 })
 export class SpeakerDetailPage {
-  speaker: any;
+  speaker$: Observable<Speaker>;
+  openSpeakerTwitter = openSpeakerTwitter;
 
   constructor(
     private dataProvider: ConferenceData,
@@ -19,18 +23,8 @@ export class SpeakerDetailPage {
   ) {}
 
   ionViewWillEnter() {
-    this.dataProvider.load().subscribe((data: any) => {
-      const speakerId = this.route.snapshot.paramMap.get('speakerId');
-      if (data && data.speakers) {
-        for (const speaker of data.speakers) {
-          if (speaker && speaker.id === speakerId) {
-            this.speaker = speaker;
-            break;
-          }
-        }
-      }
-    });
-
+    const speakerId = this.route.snapshot.paramMap.get('speakerId');
+    this.speaker$ = this.dataProvider.getSpeakerById(speakerId);
   }
 
   goToSessionDetail(session: any) {

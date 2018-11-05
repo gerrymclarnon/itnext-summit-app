@@ -3,20 +3,30 @@
     <ion-buttons slot="start">
       <ion-back-button text="Schedule" defaultHref="/app/tabs/(schedule:schedule)"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{session?.name}}</ion-title>
+    <ion-title>Session Detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="session">
-    <h1>{{session.name}}</h1>
-    <h4 *ngFor="let speaker of session?.speakers">
-      {{speaker.name}}
-    </h4>
-    <p>
-      {{session.timeStart}} - {{session.timeEnd}}
-    </p>
-    <p>{{session.location}}</p>
-    <p>{{session.description}}</p>
-  </div>
+  <ng-container *ngIf="(session$ | async) as session">
+    <div>
+      <h1>{{session.name}}</h1>
+      <div text-center *ngFor="let speaker of session.speakers">
+        <ion-item no-padding detail="false" lines="none">
+          <ion-avatar slot="start">
+            <img [src]="speaker.profilePic" alt="Speaker profile pic">
+          </ion-avatar>
+          {{speaker.name}}
+          <ion-button fill="clear" size="small" color="twitter" (click)="mentionSpeakerTwitter(speaker.twitter, session.name)">
+            <ion-icon name="logo-twitter" slot="icon-only"></ion-icon> @{{ speaker.twitter }}
+          </ion-button>
+        </ion-item>
+      </div>
+      <p>
+        {{session.timeStart}} - {{session.timeEnd}}
+      </p>
+      <p>{{session.location}}</p>
+      <p>{{session.description}}</p>
+    </div>
+  </ng-container>
 </ion-content>

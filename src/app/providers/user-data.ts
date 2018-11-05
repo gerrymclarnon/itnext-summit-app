@@ -1,77 +1,54 @@
 import { Injectable } from '@angular/core';
-import { Events } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { Session } from './conference.model';
+import { get, set } from 'idb-keyval';
 
+export interface FavoriteSession {
+  description: string;
+  id: string;
+  location: string;
+  name: string;
+  speakerNames: string[];
+  timeEnd: string;
+  timeStart: string;
+  tracks: string[];
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserData {
-  _favorites: string[] = [];
-  HAS_LOGGED_IN = 'hasLoggedIn';
-  HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
+  _favorites: FavoriteSession[] = [];
+  _sessionIdsOfSentNotifications: string[] = [];
 
-  constructor(
-    public events: Events,
-    public storage: Storage
-  ) { }
-
-  hasFavorite(sessionName: string): boolean {
-    return (this._favorites.indexOf(sessionName) > -1);
+  constructor() {
+    this.getDataFromStorage();
   }
 
-  addFavorite(sessionName: string): void {
-    this._favorites.push(sessionName);
+  async getDataFromStorage() {
+    this._favorites = await <Promise<FavoriteSession[]>>get('favorites') || [];
+    this._sessionIdsOfSentNotifications = await <Promise<string[]>>get('sessionIdsOfSentNotifications') || [];
   }
 
-  removeFavorite(sessionName: string): void {
-    const index = this._favorites.indexOf(sessionName);
+  hasFavorite(session: Session): boolean {
+    return (this._favorites.filter(favSession => favSession.id === session.id).length > 0);
+  }
+
+  addFavorite(session: Session): void {
+    const { speakers, ...favSession } = session;
+    this._favorites.push(favSession);
+    set('favorites', this._favorites);
+  }
+
+  removeFavorite(session: Session): void {
+    const { speakers, ...favSession } = session;
+    const index = this._favorites.findIndex((fav: FavoriteSession) => fav.id === favSession.id);
     if (index > -1) {
       this._favorites.splice(index, 1);
+      set('favorites', this._favorites);
     }
   }
 
-  login(username: string): Promise<any> {
-    return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-      this.setUsername(username);
-      return this.events.publish('user:login');
-    });
-  }
-
-  signup(username: string): Promise<any> {
-    return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-      this.setUsername(username);
-      return this.events.publish('user:signup');
-    });
-  }
-
-  logout(): Promise<any> {
-    return this.storage.remove(this.HAS_LOGGED_IN).then(() => {
-      return this.storage.remove('username');
-    }).then(() => {
-      this.events.publish('user:logout');
-    });
-  }
-
-  setUsername(username: string): Promise<any> {
-    return this.storage.set('username', username);
-  }
-
-  getUsername(): Promise<string> {
-    return this.storage.get('username').then((value) => {
-      return value;
-    });
-  }
-
-  isLoggedIn(): Promise<boolean> {
-    return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
-      return value === true;
-    });
-  }
-
-  checkHasSeenTutorial(): Promise<string> {
-    return this.storage.get(this.HAS_SEEN_TUTORIAL).then((value) => {
-      return value;
-    });
+  isNotificationNotSentForSession(session: FavoriteSession) {
+    return !this._sessionIdsOfSentNotifications.includes(session.id);
   }
 }

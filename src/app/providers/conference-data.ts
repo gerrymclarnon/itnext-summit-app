@@ -1,17 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { UserData } from './user-data';
+import { FavoriteSession, UserData } from './user-data';
+import { Conference, Session, Speaker } from './conference.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConferenceData {
-  data: any;
+  data: Conference;
 
-  constructor(public http: HttpClient, public user: UserData) {}
+  constructor(public http: HttpClient, public user: UserData) {
+  }
 
   load(): any {
     if (this.data) {
@@ -23,7 +24,7 @@ export class ConferenceData {
     }
   }
 
-  processData(data: any) {
+  processData(data: any): Conference {
     // just some good 'ol JS fun with objects and arrays
     // build up the data by linking speakers to sessions
     this.data = data;
@@ -67,7 +68,7 @@ export class ConferenceData {
   getTimeline(
     dayIndex: number,
     queryText = '',
-    excludeTracks: any[] = [],
+    excludeTracks: string[] = [],
     segment = 'all'
   ) {
     return this.load().pipe(
@@ -130,7 +131,7 @@ export class ConferenceData {
     // then this session does not pass the segment test
     let matchesSegment = false;
     if (segment === 'favorites') {
-      if (this.user.hasFavorite(session.name)) {
+      if (this.user.hasFavorite(session)) {
         matchesSegment = true;
       }
     } else {
@@ -143,11 +144,9 @@ export class ConferenceData {
 
   getSpeakers() {
     return this.load().pipe(
-      map((data: any) => {
-        return data.speakers.sort((a: any, b: any) => {
-          const aName = a.name.split(' ').pop();
-          const bName = b.name.split(' ').pop();
-          return aName.localeCompare(bName);
+      map((data: Conference) => {
+        return data.speakers.sort((a: Speaker, b: Speaker) => {
+          return a.name.localeCompare(b.name);
         });
       })
     );
@@ -155,7 +154,7 @@ export class ConferenceData {
 
   getTracks() {
     return this.load().pipe(
-      map((data: any) => {
+      map((data: Conference) => {
         return data.tracks.sort();
       })
     );
@@ -163,9 +162,82 @@ export class ConferenceData {
 
   getMap() {
     return this.load().pipe(
-      map((data: any) => {
+      map((data: Conference) => {
         return data.map;
       })
     );
+  }
+
+  getDate() {
+    return this.load().pipe(
+      map((data: Conference) => {
+        return data.schedule[0].date;
+      }),
+    );
+  }
+
+  selectSessions(data: Conference): Session[] {
+    return data.schedule[0].groups.map((group: any) => group.sessions).reduce((prev, curr) => [...prev, ...curr], []);
+  }
+
+  getSessionById(sessionId: string): Observable<Session> {
+    return this.load().pipe(
+      map(this.selectSessions),
+      map((sessions: Session[]) => sessions.filter(session => session.id === sessionId)),
+      map(session => session[0])
+    );
+  }
+
+  getSpeakerById(speakerId: string): Observable<Speaker> {
+    return this.getSpeakers().pipe(
+      map((speakers: Speaker[]) => {
+        return speakers.filter((speaker) => speaker.id === speakerId);
+      }),
+      map(speakers => speakers[0]),
+    );
+  }
+
+  getSpeakerByName(speakerName: string): Observable<Speaker> {
+    return this.getSpeakers().pipe(
+      map((speakers: Speaker[]) => {
+        return speakers.filter((speaker) => speaker.name === speakerName);
+      }),
+      map(speakers => speakers[0]),
+    );
+  }
+
+  getSpeakerNameById(speakerId: string): Observable<string> {
+    return this.getSpeakerById(speakerId).pipe(
+      map((speaker: Speaker) => speaker.name)
+    );
+  }
+
+  getSessionsBySpeakerName(speakerName: string): Observable<Session[]> {
+    return this.load().pipe(
+      map(map(this.selectSessions)),
+      map((sessions: Session[]) => sessions.filter(session => session.speakerNames.includes(speakerName))),
+    );
+  }
+
+  isSessionAboutToStart(session: FavoriteSession) {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const [sessionHours, sessionMinutes] = session.timeStart.split(':');
+
+    const getNotificationTime = () => {
+      const minutesReference = parseInt(sessionMinutes, 10) - 5;
+      if (minutesReference < 0) {
+        return `${parseInt(sessionHours, 10) - 1}:${60 + minutesReference}`;
+      } else {
+        return `${sessionHours}:${minutesReference}`;
+      }
+    };
+
+    const notificationTime = getNotificationTime();
+
+    return Date.parse(`01/01/2018 ${hours}:${minutes}`) >= Date.parse(`01/01/2018 ${notificationTime}`) &&
+      Date.parse(`01/01/2018 ${hours}:${minutes}`) <= Date.parse(`01/01/2018 ${session.timeStart}`);
   }
 }

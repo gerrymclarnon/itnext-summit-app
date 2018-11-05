@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-
 import { ConferenceData } from '../../providers/conference-data';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { mentionSpeakerTwitter } from '../../utils/social-engagement';
+import { Session } from '../../providers/conference.model';
 
 @Component({
   selector: 'page-session-detail',
   templateUrl: 'session-detail.html'
 })
 export class SessionDetailPage {
-  session: any;
+  session$: Observable<Session>;
+  mentionSpeakerTwitter = mentionSpeakerTwitter;
 
   constructor(
     private dataProvider: ConferenceData,
@@ -16,25 +19,7 @@ export class SessionDetailPage {
   ) {}
 
   ionViewWillEnter() {
-    this.dataProvider.load().subscribe((data: any) => {
-      if (
-        data &&
-        data.schedule &&
-        data.schedule[0] &&
-        data.schedule[0].groups
-      ) {
-        const sessionId = this.route.snapshot.paramMap.get('sessionId');
-        for (const group of data.schedule[0].groups) {
-          if (group && group.sessions) {
-            for (const session of group.sessions) {
-              if (session && session.id === sessionId) {
-                this.session = session;
-                break;
-              }
-            }
-          }
-        }
-      }
-    });
+    const sessionId = this.route.snapshot.paramMap.get('sessionId');
+    this.session$ = this.dataProvider.getSessionById(sessionId);
   }
 }

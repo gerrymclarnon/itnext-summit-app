@@ -1,92 +1,113 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Events, MenuController, Platform } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
-
-import { UserData } from './providers/user-data';
+import { AlertController, Events, MenuController, Platform, ToastController } from '@ionic/angular';
+import { buyTicket } from './utils/ticket-sale';
+import { SwUpdate } from '@angular/service-worker';
+import { FavoriteSession, UserData } from './providers/user-data';
+import { ConferenceData } from './providers/conference-data';
+import { ToastOptions } from '@ionic/core';
+import { get, set } from 'idb-keyval';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+  buyTicket = buyTicket;
+  intervalRef;
+
   appPages = [
     {
       title: 'Schedule',
       url: '/app/tabs/(schedule:schedule)',
-      icon: 'calendar'
+      icon: 'calendar',
     },
     {
       title: 'Speakers',
       url: '/app/tabs/(speakers:speakers)',
-      icon: 'contacts'
+      icon: 'contacts',
     },
     {
       title: 'Map',
       url: '/app/tabs/(map:map)',
-      icon: 'map'
+      icon: 'map',
     },
     {
       title: 'About',
       url: '/app/tabs/(about:about)',
-      icon: 'information-circle'
-    }
+      icon: 'information-circle',
+    },
   ];
-  loggedIn = false;
 
   constructor(
     private events: Events,
     private menu: MenuController,
     private platform: Platform,
     private router: Router,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private storage: Storage,
-    private userData: UserData
+    private swUpdate: SwUpdate,
+    private userData: UserData,
+    private conferenceData: ConferenceData,
+    private alertController: AlertController,
+    private toastController: ToastController,
   ) {
-    this.initializeApp();
   }
 
   ngOnInit() {
-    this.checkLoginStatus();
-    this.listenForLoginEvents();
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(async () => {
+        const alert = await this.alertController.create({
+          header: 'App update!',
+          message: 'Newer version of the app is available. It\'s a quick refresh away!',
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              cssClass: 'secondary',
+              handler: (blah) => {
+              },
+            }, {
+              text: 'Refresh',
+              handler: () => {
+                window.location.reload();
+              },
+            },
+          ],
+        });
+
+        await alert.present();
+      });
+    }
+
+    if (!('Notification' in window)) {
+      this.intervalRef = setInterval(() => {
+        this.userData._favorites
+          .filter((session: FavoriteSession) => this.conferenceData.isSessionAboutToStart(session))
+          .filter((session: FavoriteSession) => this.userData.isNotificationNotSentForSession(session))
+          .forEach((session: FavoriteSession) => {
+            this.userData._sessionIdsOfSentNotifications.push(session.id);
+            set('sessionIdsOfSentNotifications', this.userData._sessionIdsOfSentNotifications);
+            this.presentToast(session);
+          });
+      }, 1000 * 10);
+    }
+
+    this.attachOnlineStatusEvents();
+    this.showIosInstallBanner();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  ngOnDestroy() {
+    clearInterval(this.intervalRef);
   }
 
-  checkLoginStatus() {
-    return this.userData.isLoggedIn().then(loggedIn => {
-      return this.updateLoggedInStatus(loggedIn);
+  async presentToast(session: FavoriteSession) {
+    const toast = await this.toastController.create({
+      message: `Your favorite talk "${session.name}" will start at ${session.location} soon.`,
+      duration: 5000,
+      cssClass: 'custom-toast',
     });
-  }
-
-  updateLoggedInStatus(loggedIn: boolean) {
-    setTimeout(() => {
-      this.loggedIn = loggedIn;
-    }, 300);
-  }
-
-  listenForLoginEvents() {
-    this.events.subscribe('user:login', () => {
-      this.updateLoggedInStatus(true);
-    });
-
-    this.events.subscribe('user:signup', () => {
-      this.updateLoggedInStatus(true);
-    });
-
-    this.events.subscribe('user:logout', () => {
-      this.updateLoggedInStatus(false);
-    });
+    toast.present();
   }
 
   selectTab(index: number, fallbackUrl: string) {
@@ -109,15 +130,54 @@ export class AppComponent implements OnInit {
     return this.router.navigateByUrl(url);
   }
 
-  logout() {
-    this.userData.logout().then(() => {
-      return this.navigate('/app/tabs/(schedule:schedule)');
+  async attachOnlineStatusEvents() {
+    const toastOptions: ToastOptions = {
+      message: `Your device is offline. Enjoy offline mode!`,
+      duration: 3000,
+      cssClass: 'custom-toast',
+      position: 'top',
+    };
+
+    window.addEventListener('offline', async () => {
+      const toast = await this.toastController.create({
+        ...toastOptions,
+        message: `Your device is offline. Enjoy offline mode!`,
+      });
+      toast.present();
+    });
+
+    window.addEventListener('online', async () => {
+      const toast = await this.toastController.create({
+        ...toastOptions,
+        message: `Application is online.`,
+      });
+      toast.present();
     });
   }
 
-  openTutorial() {
-    this.menu.enable(false);
-    this.storage.set('ion_did_tutorial', 'false');
-    this.router.navigateByUrl('/tutorial');
+  async showIosInstallBanner() {
+    // Detects if device is on iOS
+    const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test( userAgent );
+    };
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in (window as any).navigator) && ((window as any).navigator.standalone);
+
+    // Show the banner once
+    const iosBannerIsShown = await get('iosBannerIsShown');
+
+    // Checks if should display install popup notification:
+    if (isIos() && !isInStandaloneMode() && iosBannerIsShown === undefined) {
+      const toast = await this.toastController.create({
+        showCloseButton: true,
+        closeButtonText: 'OK',
+        cssClass: 'custom-toast',
+        position: 'bottom',
+        message: `To install the app, tap "Share" icon below and select "Add to Home Screen".`,
+      });
+      toast.present();
+      set('iosBannerIsShown', true);
+    }
   }
 }

@@ -1,8 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-
-import { PopoverController } from '@ionic/angular';
-
-import { PopoverPage } from '../about-popover/about-popover';
+import { ConferenceData } from '../../providers/conference-data';
 
 @Component({
   selector: 'page-about',
@@ -11,15 +8,9 @@ import { PopoverPage } from '../about-popover/about-popover';
   encapsulation: ViewEncapsulation.None
 })
 export class AboutPage {
-  conferenceDate = '2047-05-17';
+  conferenceDate$;
 
-  constructor(public popoverCtrl: PopoverController) { }
-
-  async presentPopover(event: Event) {
-    const popover = await this.popoverCtrl.create({
-      component: PopoverPage,
-      event
-    });
-    await popover.present();
+  constructor(public confData: ConferenceData) {
+    this.conferenceDate$ = this.confData.getDate();
   }
 }

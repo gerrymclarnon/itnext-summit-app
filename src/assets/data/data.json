@@ -1,345 +1,334 @@
 {
-
   "schedule": [{
-    "date": "2047-05-17",
+    "date": "2018-11-14",
     "groups": [{
-      "time": "8:00 am",
+      "time": "8:00",
       "sessions": [{
-        "name": "Breakfast",
-        "timeStart": "8:00 am",
-        "timeEnd": "9:00 am",
-        "location": "Main hallway",
-        "tracks": ["Food"],
+        "name": "Registration, Breakfast, Sponsor Booths & Beta Area Open",
+        "timeStart": "8:00",
+        "timeEnd": "9:00",
+        "location": "Open Area",
+        "tracks": ["Break"],
         "id": "1"
       }]
     }, {
-      "time": "9:15 am",
+      "time": "9:00",
       "sessions": [{
-        "name": "Introduction to Appcamp.io",
-        "location": "Room 2203",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Ellie Elephant"],
-        "timeStart": "9:15 am",
-        "timeEnd": "9:30 am",
-        "tracks": ["Ionic"],
+        "name": "Hello explorers, hello next-gen technologies!",
+        "timeStart": "9:00",
+        "timeEnd": "9:05",
+        "tracks": ["Main"],
+        "location": "Grote Zaal",
         "id": "2"
       }, {
-        "name": "Getting started with Ionic",
-        "location": "Room 2202",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Ted Turtle"],
-        "timeStart": "9:30 am",
-        "timeEnd": "9:45 am",
-        "tracks": ["Ionic"],
+        "name": "Node.js, a runtime that you can trust",
+        "location": "Grote Zaal",
+        "description": "Node.js started as an experiment on how to use Javascript to build fast HTTP servers. Node.js evolved into a powerful runtime that is now used by developers all around the globe, from small companies to big enterprises. In this keynote, we will delve into the growth of Node.js and its module ecosystem, and how the project moves forward. We will focus on the security aspects of the ecosystem and of Node.js core, and we will finish discussing several reference architectures for deploying Node.js in production.",
+        "speakerNames": ["Matteo Collina"],
+        "timeStart": "9:05",
+        "timeEnd": "9:50",
+        "tracks": ["Main"],
         "id": "3"
       }, {
-        "name": "Tooling for Ionic",
-        "location": "Room 2201",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Rachel Rabbit"],
-        "timeStart": "9:45 am",
-        "timeEnd": "10:00 am",
-        "tracks": ["Tooling"],
+        "name": "Building Secure and Scalable Modern Applications on AWS",
+        "location": "Grote Zaal",
+        "description": "Developing modern applications that capture customer attention in today’s marketplace is extremely competitive. Applications must be responsive, real-time, secure, and usable when no network is available. In this session, we’ll explore the latest serverless cloud features from AWS to build secure, scalable mobile, web, and IoT applications. We’ll demonstrate the latest techniques for automatic mobile backend provisioning along with new capabilities for advanced querying and connecting to different data sources.",
+        "speakerNames": ["Dennis Hills"],
+        "timeStart": "9:50",
+        "timeEnd": "10:25",
+        "tracks": ["Main"],
         "id": "4"
       }]
     }, {
-      "time": "10:00 am",
+      "time": "10:00",
       "sessions": [{
-        "name": "Migrating to Ionic2",
-        "location": "Room 2201",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Eva Eagle", "Lionel Lion"],
-        "timeStart": "10:00 am",
-        "timeEnd": "10:15 am",
-        "tracks": ["Ionic"],
+        "name": "PWA: Is it a replacement for your mobile app?",
+        "location": "Grote Zaal",
+        "description": "Progressive Web Apps are another approach to offer mind boggling mobile app experiences that are immensely optimized, genuine, and accessible totally on the web. A Progressive Web App uses modern web capabilities to deliver an app-like user experience. Many large and small brands are jumping on Progressive Web Apps to create better user experiences, anywhere the web runs. While going through the latest features and capabilities of Progressive Web Apps, he will demonstrate PWA toolkits and best practices that you’d want to know for building a functional, performing and scalable PWA. After the session, you are going to answer the questions of ‘What web can do today?’, ‘Is PWA a replacement for my native mobile app?’ and ‘How can I build a PWA right away?",
+        "speakerNames": ["Önder Ceylan"],
+        "timeStart": "10:25",
+        "timeEnd": "11:00",
+        "tracks": ["Main"],
         "id": "5"
-      }, {
-        "name": "Whats new in Angular",
-        "location": "Room 2203",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Rachel Rabbit"],
-        "timeStart": "10:15 am",
-        "timeEnd": "10:30 am",
-        "tracks": ["Angular"],
-        "id": "6"
-      }, {
-        "name": "The evolution of Ionicons",
-        "location": "Room 2202",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Isabella Iguana", "Eva Eagle"],
-        "timeStart": "10:15 am",
-        "timeEnd": "10:30 am",
-        "tracks": ["Design"],
-        "id": "7"
-      }, {
-        "name": "Ionic.io Services",
-        "location": "Room 2202",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Charlie Cheetah"],
-        "timeStart": "10:45 am",
-        "timeEnd": "11:00 am",
-        "tracks": ["Services"],
-        "id": "8"
       }]
     }, {
-      "time": "11:00 am",
+      "time": "11:00",
       "sessions": [{
-        "name": "Ionic Workshop",
-        "location": "Room 2201",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Karl Kitten", "Lionel Lion"],
-        "timeStart": "11:00 am",
-        "timeEnd": "11:45 am",
-        "tracks": ["Workshop"],
+        "name": "BREAK - Time for coffee!",
+        "location": "Open Area",
+        "timeStart": "11:00",
+        "timeEnd": "11:15",
+        "tracks": ["Break"],
+        "id": "6"
+      }, {
+        "name": "A Brigade of open source tools for event-driven pipelines in Kubernetes",
+        "location": "Grote Zaal",
+        "description": "Kubernetes is truly the OS for the cloud native applications, but it’s still rough on the edges when it comes to friendliness to developers and ease of us for operators. In this talk we’ll turn your run-of-the mill cluster into a fully responsive event-driven distributed system and implement a pipeline expressed in Javascript to react to events in a timely and reproducible manner. All in on the Kubernetes Brigade! The demo-driven talk will be centred around Brigade, an open source tool from the team behind Deis (now Azure Container Services) and other tools to create event-driven pipelines in Kubernetes using Javascript.",
+        "speakerNames": ["Alessandro Vozza"],
+        "timeStart": "11:15",
+        "timeEnd": "11:50",
+        "tracks": ["Main"],
+        "id": "7"
+      }, {
+        "name": "Building a better login with the Credential Management API",
+        "location": "Expo",
+        "description": "Login pages are probably the single type of page that users on the web interact with more than any other. In recent years the sign in experience has changed with the advent of federation via social networks, but whether a user has to type an email address and password or click a link and be redirected via Facebook, the process still interrupts the journey. The Credential Management API, a new W3C standard designed by Mike West at Google, is an attempt to help streamline this process at the user agent level. This talk will investigate the new API and explore how we can use it to progressively enhance customer journeys in the apps we build.",
+        "speakerNames": ["James Allardice"],
+        "timeStart": "11:15",
+        "timeEnd": "11:50",
+        "tracks": ["Technical"],
+        "id": "8"
+      }, {
+        "name": "Superpower User Manual",
+        "location": "Grote Zaal",
+        "description": "Did you know you have superpowers? The average person now has access to more data and more powerful tools and computing resources than ever before. In this tutorial, we’ll show you how to combine Google cloud services, along with modern programming tools to analyze and visualize some interesting and practical questions. You’ll leave this session with a better sense of how much power is available right at your fingertips.",
+        "speakerNames": ["Marc Cohen"],
+        "timeStart": "11:50",
+        "timeEnd": "12:25",
+        "tracks": ["Main"],
         "id": "9"
       }, {
-        "name": "Community Interaction",
-        "location": "Room 2203",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Lionel Lion", "Gino Giraffe"],
-        "timeStart": "11:30 am",
-        "timeEnd": "11:50 am",
-        "tracks": ["Communication"],
+        "name": "Kotlin + SpringBoot = Decision making platform in Outfittery",
+        "location": "Expo",
+        "description": "Outfittery’s mission is to provide relevant fashion to men. In the past we relied purely on our stylists to put together the best outfits for our customers. Right now we are in the process of adding more and more intelligent algorithms to augment our human experts. This transition to become a data driven company has left its marks on our IT landscape: In the beginning we just did simple A/B tests. Then we wanted to use more complex logic so we added a generic data enrichment layer. Later we also provided easy configurability to steer processes. And this enabled us to orchestrate our machine learning algorithms as self contained Docker containers within a Kubernetes cluster. It then really took us some time to realize that we actually had built a delivery platform to expose just any pure function that our mad data scientists come up with – directly into our microservice landscape. Now we just put their R&D experiments directly into production... The application that drives this platform was written 100% in Kotlin. Where coroutines, Kotlin scripts and DSL’s were smashed together to fulfill our very specific needs. This talk will guide you through this journey, explain how this platform evolved along with evolution of Kotlin.",
+        "speakerNames": ["Andrei Chernyshev"],
+        "timeStart": "11:50",
+        "timeEnd": "12:25",
+        "tracks": ["Technical"],
         "id": "10"
-      }, {
-        "name": "Navigation in Ionic",
-        "location": "Room 2203",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Rachel Rabbit", "Eva Eagle"],
-        "timeStart": "11:30 am",
-        "timeEnd": "12:00 pm",
-        "tracks": ["Navigation"],
+      }]
+    }, {
+      "time": "12:00",
+      "sessions": [{
+        "name": "BREAK - Lunch",
+        "location": "Open Area",
+        "timeStart": "12:25",
+        "timeEnd": "13:30",
+        "tracks": ["Break"],
         "id": "11"
       }]
     }, {
-      "time": "12:00 pm",
+      "time": "13:00",
       "sessions": [{
-        "name": "Lunch",
-        "location": "Auditorium",
-        "description": "Come grab lunch with all the Ionic fanatics and talk all things Ionic",
-        "timeStart": "12:00 pm",
-        "timeEnd": "1:00 pm",
-        "tracks": ["Food"],
+        "name": "Software defined…everything?",
+        "location": "Grote Zaal",
+        "description": "Now that the software defined network hype seems to be cooling down and new software defined hypes are starting up, it is interesting to take a look at what Software Defined really is and what value it brings.",
+        "speakerNames": ["Martijn Doedens"],
+        "timeStart": "13:30",
+        "timeEnd": "14:05",
+        "tracks": ["Main"],
         "id": "12"
-      }]
-    }, {
-      "time": "1:00 pm",
-      "sessions": [{
-        "name": "Ionic in the Enterprise",
-        "location": "Room 2201",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Paul Puppy"],
-        "timeStart": "1:00 pm",
-        "timeEnd": "1:15 pm",
-        "tracks": ["Communication"],
+      }, {
+        "name": "Type-safe client-side queries in TypeScript",
+        "location": "Expo",
+        "description": "The introduction of statically typed languages for client-side programming, such as TypeScript, has greatly boosted the quality of creation of large client-side applications such as commonly seen when building a modern SPA. This increase in safety only extends up to the boundary of API calls. Results from a remote call are always returned as unstructured JSON, or any in TypeScript. Deserialisation is thus done manually, a tedious and error prone process. Moreover, deserialisation routines suffer from various forms of bit-rotting: as the underlying model evolves, its validation might become obsolete or, even worse, slightly off. This results in false negatives (the data is correct, but the deserializer thinks there is a mistake), or false positives (the wrong data is simply cast to the right model type, wreaking havoc in the rest of the application). In short, client-side deserialisation is, mildly put, not a lot of fun. The ever growing adoption of rich protocols such as OData (or its recent, hipster variant of GraphQL) make querying from the client side much more efficient: the client can reduce the number of received attributes ($select), rows ($filter), and even overall number of queries by requesting joined data ($expand). Unfortunately, this makes the received data even more complex to parse, adding a dynamic dimension to the problem that really does not help. In this talk, we will study the advanced typing mechanisms of TypeScript that make it possible to automatically generate a type-safe deserializer, based on a declarative description of the queried data constructed as an object.",
+        "speakerNames": ["Giuseppe Maggiore"],
+        "timeStart": "13:30",
+        "timeEnd": "14:25",
+        "tracks": ["Technical"],
         "id": "13"
-      }, {
-        "name": "Ionic Worldwide",
-        "location": "Room 2201",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Gino Giraffe"],
-        "timeStart": "1:15 pm",
-        "timeEnd": "1:30 pm",
-        "tracks": ["Communication"],
-        "id": "14"
-      }, {
-        "name": "The Ionic package service",
-        "location": "Room 2203",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Molly Mouse", "Burt Bear"],
-        "timeStart": "1:30 pm",
-        "timeEnd": "2:00 pm",
-        "tracks": ["Services"],
-        "id": "15"
       }]
     }, {
-      "time": "2:00 pm",
+      "time": "14:00",
       "sessions": [{
-        "name": "Push Notifications in Ionic",
-        "location": "Room 2202",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Burt Bear", "Charlie Cheetah"],
-        "timeStart": "2:00 pm",
-        "timeEnd": "2:30 pm",
-        "tracks": ["Services"],
+        "name": "The rise of low-code",
+        "location": "Grote Zaal",
+        "description": "On this talk, Remco will give an introduction on low-code development. The session will consist of an introduction to the rise of low-code and he’ll explain some of the best low-code platforms that are out there today according to Gartner and Forrester. After the comparison he’ll show you how to build an example app with a REST API, database and an appealing UI. After the talk, you’ll know the ideas behind low-code and hopefully consider one of the low-code platforms as the development environment for your next project.",
+        "speakerNames": ["Remco Dekkinga"],
+        "timeStart": "14:05",
+        "timeEnd": "14:40",
+        "tracks": ["Main"],
+        "id": "14"
+      },
+      {
+        "name": "End-to-end testing: from rookie to pro",
+        "location": "Expo",
+        "description": "The talk is a walkthrough guide on how to get up and running with end-to-end tests, using WebdriverIO as an example framework for demonstration purposes. Once I’ve gone through the basic setup and some simple examples, I’ll show some advanced techniques for testing some of the trickier aspects of a website. The talk will involve both slides and (offline) live coding, and will demonstrate how easy it is to get started with end-to-end tests. It is suitable for all audiences that have experience using Javascript, and is applicable to anyone developing a website, regardless of the technologies it is built with.",
+        "speakerNames": ["Domenico Gemoli"],
+        "timeStart": "14:25",
+        "timeEnd": "15:15",
+        "tracks": ["Technical"],
+        "id": "15"
+      },
+      {
+        "name": "From Batch to Pipelines - Why Apache Mesos And DC/OS Are A Solution For Emerging Patterns In Cloud Native Applications",
+        "location": "Grote Zaal",
+        "description": "Data processing paradigms are undergoing a paradigm shift as you move more and more towards real time processing. Emerging software models such as the SMACK stack are at the forefront of this change, focused on a pipeline processing model, but are also introducing new levels of operational complexity in running multiple complex distributed systems such as Spark, Kafka and Cassandra. Apache Mesos is a distributed system for running other distributed systems, often described as a distributed kernel. It’s in use at massive scale at some of the worlds largest companies like Netflix, Uber and Yelp. DC/OS is an open source distribution of Mesos, which adds all the functionality to run Mesos in production across any substrate, both on-premise and in the cloud. In this talk, Matt will explore both Mesos and DC/OS and share with you how they work under the hood, and what the benefits are of running these new kinds of systems for emerging cloud native workloads.",
+        "speakerNames": ["Matt Jarvis"],
+        "timeStart": "14:40",
+        "timeEnd": "15:15",
+        "tracks": ["Main"],
         "id": "16"
-      }, {
-        "name": "Ionic Documentation",
-        "location": "Room 2202",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Donald Duck"],
-        "timeStart": "2:30 pm",
-        "timeEnd": "2:45 pm",
-        "tracks": ["Documentation"],
+      }]
+    }, {
+      "time": "15:00",
+      "sessions": [{
+        "name": "BREAK - Stretch the legs",
+        "location": "Open Area",
+        "timeStart": "15:15",
+        "timeEnd": "15:30",
+        "tracks": ["Break"],
         "id": "17"
       }, {
-        "name": "UX planning in Ionic",
-        "location": "Room 2203",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Isabella Iguana", "Ellie Elephant"],
-        "timeStart": "2:45 pm",
-        "timeEnd": "3:00 pm",
-        "tracks": ["Design"],
+        "name": "Cloud Native Akka & Kubernetes: the holy grail to elasticity?",
+        "location": "Grote Zaal",
+        "description": "Akka is the most mature choice to implement the traits of the Reactive Manifesto, thanks to the Actor model. But we need to rely on some external infrastructure to automatically scale up or down our services. We found Docker & Kubernetes to be a perfect match for clustered Akka applications. Have you ever wondered how to actually achieve elasticity on the cloud, outside of your cushy local dev environment? Akka is the most mature choice to implement the traits of the Reactive Manifesto, thanks to the Actor model. Resilience is enabled by asynchronous message passing and Actor supervision. Location transparency, message routing and the “share nothing” approach enable seamless scalability, but once our app is deployed we need to rely on some external infrastructure to automatically scale up or down our services. At this point, Akka alone is not sufficient anymore. What else do we need? We found Docker & Kubernetes to be a perfect match for clustered Akka applications running in the cloud. Thanks to the Kubernetes API, one can write infrastructure logic that complements the business logic. This leads to a general approach of infrastructure-as-code tailored to each different business case, which in turn lets companies achieve maximum efficiency and resource usage. During this talk we will cover features from both Akka and Kubernetes, plus example code in Scala: familiarity with these technologies is recommended. Our example will rely on Google Cloud infrastructure.",
+        "speakerNames": ["Fabio Tiriticco", "Adam Sándor"],
+        "timeStart": "15:30",
+        "timeEnd": "16:05",
+        "tracks": ["Main"],
         "id": "18"
-      }]
-    }, {
-      "time": "3:00",
-      "sessions": [{
-        "name": "Directives in Ionic",
-        "location": "Room 2201",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Ted Turtle"],
-        "timeStart": "3:00 pm",
-        "timeEnd": "3:30 pm",
-        "tracks": ["Angular"],
-        "id": "19"
       }, {
-        "name": "Mobile States",
-        "location": "Room 2202",
-        "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-        "speakerNames": ["Rachel Rabbit"],
-        "timeStart": "3:30 pm",
-        "timeEnd": "3:45 pm",
-        "tracks": ["Navigation"],
-        "id": "20"
+        "name": "Operational security: Keeping your secrets private",
+        "location": "Expo",
+        "description": "Do you still store secrets in source control? Are your secrets safely stored, but are you struggling to distribute them to your applications? Do you feel this should be easy, but you can’t just find out how? In this session, Henry will take you on a journey that starts with passwords in source control. From there he will quickly take you along on a series of improvements to make both local development and production deployments more and more secure with every change. Along the way, you will learn how to use Azure Key Vault, Azure Active Directory (AAD) and App Service Managed Instance to get everyone on a need to know basis. Finally, you will see how forgetting about keys, certificates and passwords completely and just using AAD could solve all your problems. That is.., if everyone would just use AAD!",
+        "speakerNames": ["Henry Been"],
+        "timeStart": "15:30",
+        "timeEnd": "16:05",
+        "tracks": ["Technical"],
+        "id": "19"
       }]
+    },
+    {
+      "time": "16:00",
+      "sessions": [
+        {
+          "name": "How Metrics Shape Your Culture",
+          "location": "Grote Zaal",
+          "description": "What if metrics is the secret ingredient to amazing DevOps? We’ve all probably heard of CAMS in DevOps: Culture, Automation, Measurement, and Sharing. The right metrics, used the right way, touch all of these points and make everything just a bit better. The most innovative organizations use metrics to measure the right things so they can make their software development and delivery awesome. You want to measure the right things, too – but where should you start? You need to know what you want to measure, what not to measure, and what to watch out for. Because the secret is that metrics shape your culture – and Nicole will show you how.",
+          "speakerNames": ["Nicole Forsgren"],
+          "timeStart": "16:05",
+          "timeEnd": "16:45",
+          "tracks": ["Main"],
+          "id": "20"
+        }, {
+          "name": "BREAK - Drinks",
+          "location": "Open Area",
+          "timeStart": "16:45",
+          "timeEnd": "19:00",
+          "tracks": ["Break"],
+          "id": "21"
+        }
+      ]
     }]
   }],
-
-
   "speakers": [{
-    "name": "Burt Bear",
-    "profilePic": "assets/img/speakers/bear.jpg",
-    "twitter": "ionicframework",
-    "about": "Burt is a Bear.",
-    "location": "Everywhere",
-    "email": "burt@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Matteo Collina",
+    "profilePic": "assets/img/speakers/matteo-collina.jpg",
+    "twitter": "matteocollina",
+    "about": "Matteo is a code pirate and mad scientist. He spends most of his days programming in Node.js, but in the past he worked with Ruby, Java and Objective-C. In 2014, he defended his Ph.D. thesis titled “Application Platforms for the Internet of Things”. Now he is a Principal Architect at nearForm, where he consults for the top brands of the world. Matteo is also the author of the Node.js MQTT Broker, Mosca, the fast logger Pino and of the Fastify web framework. Matteo is a member of the Node.js Technical Steering Committee. Matteo spoke at several international conferences: Node.js Interactive, NodeConf.eu, NodeSummit, JSConf.Asia, WebRebels, and JsDay to name a few. He is also co-author of the book “Node.js Cookbook, Third Edition” edited by Packt. In the summer he loves sailing the Sirocco.",
+    "company": "NearForm",
     "id": "1"
   }, {
-    "name": "Charlie Cheetah",
-    "profilePic": "assets/img/speakers/cheetah.jpg",
-    "twitter": "ionicframework",
-    "about": "Charlie is a Cheetah.",
-    "location": "Everywhere",
-    "email": "charlie@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Nicole Forsgren",
+    "profilePic": "assets/img/speakers/nicole-forsgren.jpg",
+    "twitter": "nicolefv",
+    "about": "Dr. Nicole Forsgren is Co-founder, CEO and Chief Scientist at DevOps Research and Assessment (DORA) and co-author of the book Accelerate: The Science of Lean Software and DevOps. She is best known for her work measuring the technology process and as the lead investigator on the largest DevOps studies to date. She has been a professor, sysadmin, and performance engineer. Nicole’s work has been published in several peer-reviewed journals. Nicole earned her PhD in Management Information Systems from the University of Arizona, and is a Research Affiliate at Clemson University and Florida International University.",
+    "company": "DORA",
     "id": "2"
   }, {
-    "name": "Donald Duck",
-    "profilePic": "assets/img/speakers/duck.jpg",
-    "twitter": "ionicframework",
-    "about": "Donald is a Duck.",
-    "location": "Everywhere",
-    "email": "donald@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Adam Sándor",
+    "profilePic": "assets/img/speakers/adam-sandor.jpg",
+    "twitter": "adamsand0r",
+    "about": "Adam Sandor runs the Software Circus meetup in Amsterdam and as you can expect, he’s a container magician – he works for the most prominent cloud consulting company in the Netherlands. Adam and Fabio joined forces to achieve the ultimate elasticity, bringing together the best of their skills.",
+    "company": "Container Solutions",
     "id": "3"
   }, {
-    "name": "Eva Eagle",
-    "profilePic": "assets/img/speakers/eagle.jpg",
-    "twitter": "ionicframework",
-    "about": "Eva is an Eagle.",
-    "location": "Everywhere",
-    "email": "eva@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Fabio Tiriticco",
+    "profilePic": "assets/img/speakers/fabio-tiriticco.jpg",
+    "twitter": "ticofab",
+    "about": "Fabio Tiriticco is a software architect and organiser of the Reactive Amsterdam meetup. In love with reactive systems since 2012, he knows that Reactive is a mindset before a toolset. Fabio and Adam joined forces to achieve the ultimate elasticity, bringing together the best of their skills.",
+    "company": "Fabway",
     "id": "4"
   }, {
-    "name": "Ellie Elephant",
-    "profilePic": "assets/img/speakers/elephant.jpg",
-    "twitter": "ionicframework",
-    "about": "Ellie is an Elephant.",
-    "location": "Everywhere",
-    "email": "ellie@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Andrei Chernyshev",
+    "profilePic": "assets/img/speakers/andrei-chernyshev.jpg",
+    "twitter": "gimlet2",
+    "about": "Andrei is a senior software engineer at Outfittery, a company providing relevant fashion to men, with the help of intelligent algorithms and machine learning. He’s a huge Kotlin enthusiast and advocate, an active member of the Kotlin User Group Berlin, and is always ready to talk about technologies.",
+    "company": "Outfittery",
     "id": "5"
   }, {
-    "name": "Gino Giraffe",
-    "profilePic": "assets/img/speakers/giraffe.jpg",
-    "twitter": "ionicframework",
-    "about": "Gino is a Giraffe.",
-    "location": "Everywhere",
-    "email": "gino@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Giuseppe Maggiore",
+    "profilePic": "assets/img/speakers/giuseppe-maggiore.jpg",
+    "twitter": "",
+    "about": "As an academician, Giuseppe holds a PhD in Computer Science from the University of Venice in strict cooperation with the University of Tilburg. During his MSc and PhD, Giuseppe worked as an assistant teacher and researcher at the universities of Venezia and Verona. His research has mostly focused on the design of programming languages in order to simplify complex tasks. He has been lecturer at the NHTV College in Breda (NL), and associate professor at the Hogeschool Rotterdam. As a developer, he started as a freelance web developer, and then later became Student Evangelist for Microsoft Italy, and finally consultant for companies in the North-East region of the country and speaker at major Microsoft events. He also made videogames via an own startup. Giuseppe is now working as CTO of Hoppinger, a fantastic bureau in the heart of Rotterdam, in order to unite web development pragmatism, beautiful designs, and reliable software engineering into excellent products. Giuseppe is also co-owner and founder of GrandeOmega, an innovative startup for teaching programming to colleges and universities. Such engagements leave little time over for hobbies, so all remaining time is devoted to his wonderful family (Giulia, his wife, and companion of almost two decades, and the two lovely daughters Rebecca and Rachel).",
+    "company": "Hoppinger",
     "id": "6"
   }, {
-    "name": "Isabella Iguana",
-    "profilePic": "assets/img/speakers/iguana.jpg",
-    "twitter": "ionicframework",
-    "about": "Isabella is an Iguana.",
-    "location": "Everywhere",
-    "email": "isabella@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Marc Cohen",
+    "profilePic": "assets/img/speakers/marc-cohen.jpg",
+    "twitter": "marcacohen",
+    "about": "I build tools, demos, codelabs, and other things to make the Google Cloud Platform easier and more fun to use. Originally from New Jersey, then Seattle, and now live and work in London. I co-authored a book about Google Compute Engine and wrote the product announcement demo. In a previous life, I developed communication systems at Bell Labs and Lucent Technologies. Outside of work, I enjoy indie music, quirky films (especially documentaries), books, puzzles, and chess. I’m also very interested in education, teaching, and applying technology (like spaced repetition) to enhance the learning experience.",
+    "company": "Google",
     "id": "7"
   }, {
-    "name": "Karl Kitten",
-    "profilePic": "assets/img/speakers/kitten.jpg",
-    "twitter": "ionicframework",
-    "about": "Karl is a Kitten.",
-    "location": "Everywhere",
-    "email": "karl@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Dennis Hills",
+    "profilePic": "assets/img/speakers/dennis-hills.jpg",
+    "twitter": "dmennis",
+    "about": "Dennis Hills is a Mobile Developer Advocate for Amazon Web Services (AWS) and a University of Washington graduate in Computing Software & Systems. He has published more than a half dozen mobile iOS apps and is a regular blogger to the mobile dev community. He is passionate about mobile, automation, AI, Machine Learning, and serverless cloud computing. Dennis resides in Seattle, Washington USA.",
+    "company": "AWS",
     "id": "8"
   }, {
-    "name": "Lionel Lion",
-    "profilePic": "assets/img/speakers/lion.jpg",
-    "twitter": "ionicframework",
-    "about": "Lionel is a Lion.",
-    "location": "Everywhere",
-    "email": "lionel@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Matt Jarvis",
+    "profilePic": "assets/img/speakers/matt-jarvis.jpg",
+    "twitter": "matteocollina",
+    "about": "Matt Jarvis is Senior Director of Community and Evangelism at Mesosphere, engaging with the communities around DC/OS and Apache Mesos. Matt has spent more than 15 years building products and services around open source software, on everything from embedded devices to enterprise class distributed systems. Most recently he has been focused on the open cloud infrastructure space, and in emerging patterns for cloud native applications.",
+    "company": "",
     "id": "9"
   }, {
-    "name": "Molly Mouse",
-    "profilePic": "assets/img/speakers/mouse.jpg",
-    "twitter": "ionicframework",
-    "about": "Molly is a Mouse.",
-    "location": "Everywhere",
-    "email": "molly@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "James Allardice",
+    "profilePic": "assets/img/speakers/james-allardice.jpg",
+    "twitter": "james_allardice",
+    "about": "James is a senior engineer with several years experience building single page web apps with Node.js and a variety of front-end technologies. He’s the co-founder of orangejellyfish, a software consultancy based in London with a passion for JavaScript, open source software and the cloud. In his spare time he enjoys answering tricky questions on Stack Overflow where he’s built up a reputation as a JavaScript expert.",
+    "company": "orangejellyfish",
     "id": "10"
   }, {
-    "name": "Paul Puppy",
-    "profilePic": "assets/img/speakers/puppy.jpg",
-    "twitter": "ionicframework",
-    "about": "Paul is a Puppy.",
-    "location": "Everywhere",
-    "email": "paul@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Alessandro Vozza",
+    "profilePic": "assets/img/speakers/alessandro-vozza.jpg",
+    "twitter": "bongo",
+    "about": "Alessandro has been around Open Source for as long as he can remember, and he started cultivating the DevOps community in Amsterdam when it was not an hype. After many transitions, he now settled as Senior Software Engineer for Microsoft, pushing for adoption of state of the art DevOps practises and culture across different industries and communities. He’s a CNCF ambassador and one of the organiser of K8sday.",
+    "company": "Microsoft",
     "id": "11"
   }, {
-    "name": "Rachel Rabbit",
-    "profilePic": "assets/img/speakers/rabbit.jpg",
-    "twitter": "ionicframework",
-    "about": "Rachel is a Rabbit.",
-    "location": "Everywhere",
-    "email": "rachel@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Domenico Gemoli",
+    "profilePic": "assets/img/speakers/domenico-gemoli.jpg",
+    "twitter": "aberonni",
+    "about": "Domenico is a frontend developer at booking.com, currently working on their testing infrastructure. He loves cats, pizza and Rocket League! He has been working with web technologies since 2010, when he joined unit9 as an Interactive developer, building stunning interactive storytelling experiences in Flash. In 2015 he moved on to the YOOX Net-a-Porter group, working on luxury fashion e-commerce websites, and this is when he met end-to-end testing – it was love at first sight. Since then, Domenico has been actively searching opportunities for implementing end-to-end tests and he is currently helping booking.com achieve deployment stability through a sophisticated end-to-end testing infrastructure.",
+    "company": "Booking.com",
     "id": "12"
   }, {
-    "name": "Ted Turtle",
-    "profilePic": "assets/img/speakers/turtle.jpg",
-    "twitter": "ionicframework",
-    "about": "Ted is a Turtle.",
-    "location": "Everywhere",
-    "email": "ted@example.com",
-    "phone": "+1-541-754-3010",
+    "name": "Henry Been",
+    "profilePic": "assets/img/speakers/henry-been.jpg",
+    "twitter": "henry_been",
+    "about": "Henry Been is an independent DevOps and Azure architect from The Netherlands. He enjoys working with development teams to create and deliver great software. For him, this includes the full DevOps cycle, starting from discovering and planning new features and ending only when end-users are satisfied. Henry’s interests include the Azure cloud, DevOps, software architecture and the design and implementation of testable and maintainable software. Next to his work, he is one of the Microsoft ALM DevOps Rangers, a group of 130 engineers worldwide who share professional guidance and create gap filling solutions surrounding VSTS and Azure.",
+    "company": "DevOps Ranger",
     "id": "13"
+  }, {
+    "name": "Martijn Doedens",
+    "profilePic": "assets/img/speakers/martijn-doedens.jpg",
+    "twitter": "mdoedens",
+    "about": "Martijn Doedens is security consultant at SecureLink. After his study Computer Science he started as network and security engineer. Nowadays he is security consultant and architect and works for the CTO office of SecureLink.",
+    "company": "SecureLink",
+    "id": "14"
+  }, {
+    "name": "Önder Ceylan",
+    "profilePic": "assets/img/speakers/onder-ceylan.jpg",
+    "twitter": "onderceylan",
+    "about": "Önder has been working on web and mobile apps, on a range of small and very complex ones in various development ecosystems for the past 15 years. Javascript has always been his passion and nowadays he enjoys it at it’s full while working as a JavaScript Team Lead. He believes in team work and sees himself as a strong agilist. Next to being a Senior JS Developer, Önder is Squad lead of the JavaScript Squad at LINKIT.",
+    "company": "LINKIT",
+    "id": "15"
+  }, {
+    "name": "Remco Dekkinga",
+    "profilePic": "assets/img/speakers/remco-dekkinga.jpg",
+    "twitter": "dekkinga",
+    "about": "",
+    "company": "LINKIT",
+    "id": "16"
   }],
-
-
   "map": [{
-    "name": "Monona Terrace Convention Center",
-    "lat": 43.071584,
-    "lng": -89.380120,
+    "name": "Pakhuis de Zwijger",
+    "lat": 52.376847,
+    "lng": 4.922118,
     "center": true
-  }, {
-    "name": "Ionic HQ",
-    "lat": 43.074395,
-    "lng": -89.381056
-  }, {
-    "name": "Afterparty - Brocach Irish Pub",
-    "lat": 43.07336,
-    "lng": -89.38335
   }]
-
 }
