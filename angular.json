@@ -34,7 +34,17 @@
               "src/manifest.json",
               "src/robots.txt",
               "src/browserconfig.xml",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              {
+                "glob": "**/*-sw.js",
+                "input": "src/app/sw",
+                "output": "/"
+              },
+              {
+                "glob": "**/idb-keyval-iife.min.js",
+                "input": "node_modules/idb-keyval/dist/",
+                "output": "/"
+              }
             ],
             "styles": [
               {
