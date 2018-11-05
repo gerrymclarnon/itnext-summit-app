@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConferenceData } from '../../providers/conference-data';
 import { Observable } from 'rxjs';
 import { openSpeakerTwitter } from '../../utils/social-engagement';
+import { Speaker } from '../../providers/conference.model';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { openSpeakerTwitter } from '../../utils/social-engagement';
   encapsulation: ViewEncapsulation.None
 })
 export class SpeakerDetailPage {
-  speaker$: Observable<any>;
+  speaker$: Observable<Speaker>;
   openSpeakerTwitter = openSpeakerTwitter;
 
   constructor(

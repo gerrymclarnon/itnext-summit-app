@@ -4,7 +4,7 @@ export function openSpeakerTwitter(speaker: any) {
 
 export function mentionSpeakerTwitter(twitter: string, sessionName: string) {
   window.open(`https://twitter.com/intent/tweet?screen_name=\
-${twitter}&text=${encodeURIComponent(sessionName)}&hashtags=itnextsummit,itnext`, '_blank');
+${twitter}&text=${encodeURIComponent('"' + sessionName + '"')}&hashtags=itnextsummit,itnextpwa`, '_blank');
 }
 
 export function shareOnNetwork(network: string) {
@@ -18,7 +18,7 @@ ITNEXT%20Summit%202018%20PWA&summary=Check%20out%20the%20PWA%20of%20ITNEXT%20Sum
       break;
     case 'Twitter':
       window.open(`https://twitter.com/intent/tweet?screen_name=itnext_io\
-&text=https%3A//itnext-summit-2018.firebaseapp.com&hashtags=itnextsummit,itnext`,
+&text=https%3A//itnext-summit-2018.firebaseapp.com&hashtags=itnextsummit,itnextpwa`,
         '_blank');
       break;
   }

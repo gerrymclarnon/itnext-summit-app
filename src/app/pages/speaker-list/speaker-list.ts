@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 
 import { ConferenceData } from '../../providers/conference-data';
+import { Session, Speaker } from '../../providers/conference.model';
 
 @Component({
   selector: 'page-speaker-list',
@@ -11,7 +12,7 @@ import { ConferenceData } from '../../providers/conference-data';
   encapsulation: ViewEncapsulation.None
 })
 export class SpeakerListPage {
-  speakers: any[] = [];
+  speakers: Speaker[] = [];
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
@@ -20,22 +21,22 @@ export class SpeakerListPage {
   ) {}
 
   ionViewDidEnter() {
-    this.confData.getSpeakers().subscribe((speakers: any[]) => {
+    this.confData.getSpeakers().subscribe((speakers: Speaker[]) => {
       this.speakers = speakers;
     });
   }
 
-  goToSessionDetail(session: any) {
+  goToSessionDetail(session: Session) {
     this.router.navigateByUrl(`app/tabs/(speakers:session/${session.id})`);
   }
 
-  goToSpeakerDetail(speaker: any) {
+  goToSpeakerDetail(speaker: Speaker) {
     this.router.navigateByUrl(
       `app/tabs/(speakers:speaker-details/${speaker.id})`
     );
   }
 
-  openSpeakerTwitter(speaker: any) {
+  openSpeakerTwitter(speaker: Speaker) {
     window.open(`https://twitter.com/${speaker.twitter}`, '_blank');
   }
 
@@ -48,9 +49,6 @@ export class SpeakerListPage {
           handler: () => {
             navigator.clipboard.writeText(window.location.origin + `/app/tabs/(speakers:speaker-details/${speaker.id})`);
           }
-        },
-        {
-          text: 'Share via ...'
         },
         {
           text: 'Cancel',
