@@ -5,6 +5,7 @@ import { AlertController, List, LoadingController, ModalController, ToastControl
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { shareOnNetwork } from '../../utils/social-engagement';
 
 @Component({
   selector: 'page-schedule',
@@ -23,6 +24,8 @@ export class SchedulePage {
   shownSessions: any = [];
   groups: any = [];
   confDate: string;
+
+  shareOnNetwork = shareOnNetwork;
 
   constructor(
     public alertCtrl: AlertController,
