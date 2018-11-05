@@ -168,4 +168,12 @@ export class ConferenceData {
       })
     );
   }
+
+  getDate() {
+    return this.load().pipe(
+      map((data: any) => {
+        return data.date;
+      }),
+    );
+  }
 }
