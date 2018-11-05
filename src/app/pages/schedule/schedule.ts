@@ -6,12 +6,15 @@ import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
 import { shareOnNetwork } from '../../utils/social-engagement';
+import { Session } from '../../providers/conference.model';
+import { SessionProgressPipe } from '../../providers/session-progress.pipe';
 
 @Component({
   selector: 'page-schedule',
   templateUrl: 'schedule.html',
   styleUrls: ['./schedule.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  providers: [SessionProgressPipe]
 })
 export class SchedulePage {
   // Gets a reference to the list element
@@ -75,13 +78,13 @@ export class SchedulePage {
   }
 
   async addFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any) {
-    if (this.user.hasFavorite(sessionData.name)) {
+    if (this.user.hasFavorite(sessionData)) {
       // woops, they already favorited it! What shall we do!?
       // prompt them to remove it
       this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
     } else {
       // remember this session as a user favorite
-      this.user.addFavorite(sessionData.name);
+      this.user.addFavorite(sessionData);
 
       // create an alert instance
       const alert = await this.alertCtrl.create({
@@ -100,7 +103,7 @@ export class SchedulePage {
 
   }
 
-  async removeFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any, title: string) {
+  async removeFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: Session, title: string) {
     const alert = await this.alertCtrl.create({
       header: title,
       message: 'Would you like to remove this session from your favorites?',
@@ -117,7 +120,7 @@ export class SchedulePage {
           text: 'Remove',
           handler: () => {
             // they want to remove this session from their favorites
-            this.user.removeFavorite(sessionData.name);
+            this.user.removeFavorite(sessionData);
             this.updateSchedule();
 
             // close the sliding item and hide the option buttons
@@ -145,23 +148,16 @@ export class SchedulePage {
     fab.close();
   }
 
-  /*doRefresh(refresher: Refresher) {
-    this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.shownSessions = data.shownSessions;
-      this.groups = data.groups;
+  getProgressStyle(track: string, progress: string) {
+    if (progress === '0' || progress === '100') {
+      return 'white';
+    }
 
-      // simulate a network request that would take longer
-      // than just pulling from out local json file
-      setTimeout(() => {
-        refresher.complete();
-
-        const toast = this.toastCtrl.create({
-          message: 'Sessions have been updated.',
-          duration: 3000
-        });
-        toast.present();
-      }, 1000);
-    });
+    const trackColorRGBMap = {
+      main: { start: '#C7D4E4', end: '#E3EAF1' },
+      technical: { start: '#CEEAE8', end: '#E7F5F4' },
+      break: { start: '#D5E7CA', end: '#EAF3E5' },
+    };
+    return `linear-gradient(90deg, ${trackColorRGBMap[track].start} ${progress}%, ${trackColorRGBMap[track].end} ${progress}%)`;
   }
-  */
 }

@@ -34,8 +34,12 @@
         </ion-label>
       </ion-item-divider>
 
-      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
-        <ion-item button (click)="goToSessionDetail(session)">
+      <ion-item-sliding *ngFor="let session of group.sessions;" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
+        <ion-item *ngLet="(session | sessionProgress) as progress"
+                  button
+                  (click)="goToSessionDetail(session)"
+                  [ngClass]="{'complete': progress === '100'}"
+                  [ngStyle]="{'background': getProgressStyle((session.tracks[0] | lowercase), progress)}">
           <ion-label>
             <h3>{{session.name}}</h3>
             <p>

@@ -4,3 +4,5 @@ declare interface Navigator {
     writeText(text: string): Promise<string>;
   };
 }
+declare var Fingerprint2: any;
+declare var idb: any;
