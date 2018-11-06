@@ -20,6 +20,9 @@ You can experiment with live demo of [ITNEXT Summit 2018 PWA](https://github.com
   - Added push notifications service worker of firebase, to engage users through GCM
   - Added Web Payment Request API demo with a **Buy Ticket** link on navigation
   - Added copy link action for speaker share to demonstrate Clipboard API
+  - Added online/offline messages to notify user on connectivity
+  - Added iOS A2HS message, and complied with Android auto A2HS message
+  - Added app update message to notify users when SW is updated
 
 ### Bug fixes
 
@@ -42,6 +45,8 @@ This PWA uses a number of Web APIs and web technologies to work properly:
 * Payment Requiest API
 * CSS Variables
 * Background Sync API
+* navigator.onLine
+* A2HS (Add to Home Screen)
 * Push API
 * Angular
 * Ionic
