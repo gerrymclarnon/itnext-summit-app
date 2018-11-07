@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 
+import { openSpeakerTwitter } from '../../utils/social-engagement';
 import { ConferenceData } from '../../providers/conference-data';
 import { Session, Speaker } from '../../providers/conference.model';
 
@@ -12,6 +13,8 @@ import { Session, Speaker } from '../../providers/conference.model';
   encapsulation: ViewEncapsulation.None
 })
 export class SpeakerListPage {
+  openSpeakerTwitter = openSpeakerTwitter;
+
   speakers: Speaker[] = [];
 
   constructor(
@@ -34,10 +37,6 @@ export class SpeakerListPage {
     this.router.navigateByUrl(
       `app/tabs/(speakers:speaker-details/${speaker.id})`
     );
-  }
-
-  openSpeakerTwitter(speaker: Speaker) {
-    window.open(`https://twitter.com/${speaker.twitter}`, '_blank');
   }
 
   async openSpeakerShare(speaker: any) {

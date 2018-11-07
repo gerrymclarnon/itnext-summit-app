@@ -12,7 +12,7 @@
     <img [src]="speaker.profilePic" [alt]="speaker.name">
     <br>
 
-    <ion-button fill="clear" size="small" color="twitter" (click)="openSpeakerTwitter(speaker)">
+    <ion-button fill="clear" size="small" color="twitter" *ngIf="speaker.twitter" (click)="openSpeakerTwitter(speaker)">
       <ion-icon name="logo-twitter" slot="icon-only"></ion-icon>
     </ion-button>
   </div>

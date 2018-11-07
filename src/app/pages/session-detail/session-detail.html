@@ -17,7 +17,7 @@
             <img [src]="speaker.profilePic" alt="Speaker profile pic">
           </ion-avatar>
           {{speaker.name}}
-          <ion-button fill="clear" size="small" color="twitter" (click)="mentionSpeakerTwitter(speaker.twitter, session.name)">
+          <ion-button fill="clear" size="small" color="twitter" *ngIf="speaker.twitter" (click)="mentionSpeakerTwitter(speaker.twitter, session.name)">
             <ion-icon name="logo-twitter" slot="icon-only"></ion-icon> @{{ speaker.twitter }}
           </ion-button>
         </ion-item>
