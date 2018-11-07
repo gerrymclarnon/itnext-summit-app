@@ -1,4 +1,6 @@
-export function openSpeakerTwitter(speaker: any) {
+import { Speaker } from '../providers/conference.model';
+
+export function openSpeakerTwitter(speaker: Speaker) {
   window.open(`https://twitter.com/${speaker.twitter}`, '_blank');
 }
 

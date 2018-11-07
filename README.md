@@ -43,11 +43,12 @@ This PWA uses a number of Web APIs and web technologies to work properly:
 * Notifications API
 * Web App Manifest
 * Payment Requiest API
-* CSS Variables
+* Clipboard API
 * Background Sync API
 * navigator.onLine
 * A2HS (Add to Home Screen)
 * Push API
+* CSS Variables
 * Angular
 * Ionic
 * Firebase
