@@ -6,7 +6,7 @@ This repo is forked from ionic-team/ionic-conference-app. To see original ionic 
 
 ## DEMO
 
-You can experiment with live demo of [ITNEXT Summit 2018 PWA](https://github.com/ionic-team/ionic-conference-app/blob/master/README.md) by opening it on different platforms and devices.
+You can experiment with live demo of [ITNEXT Summit 2018 PWA](https://itnext-summit-2018.firebaseapp.com) by opening it on different platforms and devices.
 
 ## Changes
 
