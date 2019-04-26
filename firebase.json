@@ -18,11 +18,11 @@
     ],
     "headers": [
       {
-        "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
-        "headers" : [
+        "source": "**/*.@(jpg|jpeg|gif|png|svg)",
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "max-age=86400"
+            "key": "Cache-Control",
+            "value": "max-age=86400"
           },
           {
             "key": "Content-Encoding",
@@ -31,11 +31,11 @@
         ]
       },
       {
-        "source" : "**/*.@(js|css)",
-        "headers" : [
+        "source": "**/*.@(js|css)",
+        "headers": [
           {
-            "key" : "Cache-Control",
-            "value" : "max-age=31536000"
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
           },
           {
             "key": "Content-Encoding",
@@ -53,5 +53,9 @@
         ]
       }
     ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
