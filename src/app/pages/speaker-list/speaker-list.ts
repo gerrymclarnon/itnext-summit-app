@@ -6,6 +6,7 @@ import { openSpeakerTwitter } from '../../utils/social-engagement';
 import { ConferenceData } from '../../providers/conference-data';
 import { Session, Speaker } from '../../providers/conference.model';
 import { PlayerService } from '../../providers/player-service';
+import {Player} from '../../models/Player';
 
 @Component({
   selector: 'page-speaker-list',
@@ -17,7 +18,7 @@ export class SpeakerListPage {
   openSpeakerTwitter = openSpeakerTwitter;
 
   speakers: Speaker[] = [];
-  players: any[] = [];
+  players: Player[] = [];
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
