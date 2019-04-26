@@ -1,4 +1,4 @@
-# ITNEXT Summit 2018 PWA
+# PlayerManager Summit 2018 PWA
 
 This is a prototype app which was built to show capabilities of a typical PWA. Commits on this repo is designed to show developers how to transform a typical Angular/ionic app into a powerful PWA. It also features a couple of nice UX ideas on top of original ionic conference app along with some bugfixes.
 
@@ -6,7 +6,7 @@ This repo is forked from ionic-team/ionic-conference-app. To see original ionic 
 
 ## DEMO
 
-You can experiment with live demo of [ITNEXT Summit 2018 PWA](https://itnext-summit-2018.firebaseapp.com) by opening it on different platforms and devices.
+You can experiment with live demo of [PlayerManager Summit 2018 PWA](https://itnext-summit-2018.firebaseapp.com) by opening it on different platforms and devices.
 
 ## Changes
 

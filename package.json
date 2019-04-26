@@ -1,7 +1,7 @@
 {
   "name": "itnex-summit-app",
   "version": "0.0.0",
-  "description": "ITNEXT Summit App",
+  "description": "PlayerManager App",
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",

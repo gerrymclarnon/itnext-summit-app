@@ -1,5 +1,9 @@
 {
   "index": "/index.html",
+  "appData": {
+    "version": "1.1.0",
+    "changelog": "Added players"
+  },
   "assetGroups": [
     {
       "name": "app",
