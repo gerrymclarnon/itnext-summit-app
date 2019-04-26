@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   appPages = [
     {
-      title: 'Schedule',
+      title: 'Games',
       url: '/app/tabs/(schedule:schedule)',
       icon: 'calendar',
     },

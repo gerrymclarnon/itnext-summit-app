@@ -28,7 +28,7 @@ interface Token {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireMessagingModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

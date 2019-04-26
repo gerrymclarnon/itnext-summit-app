@@ -24,7 +24,7 @@ export class SpeakerListPage {
     public actionSheetCtrl: ActionSheetController,
     public confData: ConferenceData,
     public router: Router,
-    public playerService: PlayerService,
+    public playerService: PlayerService
   ) {
     this.playerService.getList().subscribe((data: any) => {
       this.players = data;
