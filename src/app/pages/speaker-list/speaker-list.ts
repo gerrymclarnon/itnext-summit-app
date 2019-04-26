@@ -5,6 +5,7 @@ import { ActionSheetController } from '@ionic/angular';
 import { openSpeakerTwitter } from '../../utils/social-engagement';
 import { ConferenceData } from '../../providers/conference-data';
 import { Session, Speaker } from '../../providers/conference.model';
+import { PlayerService } from '../../providers/player-service';
 
 @Component({
   selector: 'page-speaker-list',
@@ -16,12 +17,18 @@ export class SpeakerListPage {
   openSpeakerTwitter = openSpeakerTwitter;
 
   speakers: Speaker[] = [];
+  players: any[] = [];
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
     public confData: ConferenceData,
-    public router: Router
-  ) {}
+    public router: Router,
+    public playerService: PlayerService,
+  ) {
+    this.playerService.getList().subscribe((data: any) => {
+      this.players = data;
+    });
+  }
 
   ionViewDidEnter() {
     this.confData.getSpeakers().subscribe((speakers: Speaker[]) => {

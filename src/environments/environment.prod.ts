@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'YOUR_FIREBASE_API_KEY_HERE',
-    authDomain: 'itnext-summit-2018.firebaseapp.com',
-    databaseURL: 'https://itnext-summit-2018.firebaseio.com',
-    projectId: 'itnext-summit-2018',
-    storageBucket: 'itnext-summit-2018.appspot.com',
-    messagingSenderId: 'YOUR_GCM_MESSAGE_SENDER_ID_HERE'
+    apiKey: 'AIzaSyB8Qx4nlrKBectiq1PxdMonO-IKyGP3lpA',
+    authDomain: 'email-8734c.firebaseapp.com',
+    databaseURL: 'https://email-8734c.firebaseio.com',
+    projectId: 'email-8734c',
+    storageBucket: 'email-8734c.appspot.com',
+    messagingSenderId: '476597523348'
   }
 };

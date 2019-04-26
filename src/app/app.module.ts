@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireMessaging, AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireDatabase, AngularFireDatabaseModule, AngularFireList } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 interface Token {
   date: number;
@@ -27,6 +28,7 @@ interface Token {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireMessagingModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
