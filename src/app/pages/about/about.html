@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>About</ion-title>
+    <ion-title>Next Game</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,24 +12,21 @@
     <img src="assets/img/logo.svg" alt="PlayerManager Summit Logo">
   </div>
   <div padding class="about-info">
-    <h4>PlayerManager</h4>
+    <h4>Next Game</h4>
 
-    <ion-list lines="none">
+    <ion-list lines="none" *ngIf="nextGame">
       <ion-item>
         <ion-icon name="calendar" slot="start"></ion-icon>
-        <ion-label>Date</ion-label>
-        {{ conferenceDate$ | async }}
+        <ion-label>Kick Off</ion-label>
+        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'LLLL' }}
       </ion-item>
 
       <ion-item>
         <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-label>Location</ion-label>
-        Amsterdam
+        <ion-label>Venue</ion-label>
+        {{nextGame.location}}
       </ion-item>
     </ion-list>
 
-    <p>
-      <strong>LEARN. SHARE. CONNECT.</strong> We live by this motto. PlayerManager SUMMIT 2018 is an event where innovative companies and people will demystify their products and knowledge, showing the tech behind the solutions of tomorrow. With the Summit, we extend our community and create another great opportunity for connecting, broadening and deepening knowledge! We will showcase the tech and skills necessary to build a scalable application in a time where time-to-market is one of the most critical factors. So enjoy our inspirational <strong>business track</strong> to hear about success and lessons learned from market leaders. If you are looking for more tech-savvy talks and hands-on sessions, join our <strong>technical track</strong> where we will discuss next-gen frontend development, backend development, network, cybersecurity, cloud-native infrastructure, data engineering and low-code development.
-    </p>
   </div>
 </ion-content>

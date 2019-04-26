@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MomentModule } from 'ngx-moment';
 
 import { AboutPage } from './about';
 
@@ -11,7 +12,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild(routes),
+    MomentModule
+  ],
+  exports: [RouterModule, MomentModule]
 })
 export class AboutPageRoutingModule { }
