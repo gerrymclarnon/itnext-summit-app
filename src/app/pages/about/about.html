@@ -16,9 +16,15 @@
 
     <ion-list lines="none" *ngIf="nextGame">
       <ion-item>
-        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-icon name="football" slot="start"></ion-icon>
         <ion-label>Kick Off</ion-label>
-        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'LLLL' }}
+        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'LT' }}
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label>Date</ion-label>
+        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'dddd D MMM YYYY' }}
       </ion-item>
 
       <ion-item>
