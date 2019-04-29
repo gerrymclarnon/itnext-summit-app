@@ -3,11 +3,17 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+
     <ion-title>PlayerManager</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h4>Map</h4>
-  <div #mapCanvas class="map-canvas"></div>
+
+  <firebase-ui></firebase-ui>
+
+  <h1 *ngIf="afAuth.auth.currentUser">Hi {{afAuth.auth.currentUser.displayName}}</h1>
+
+  <ion-button *ngIf="afAuth.auth.currentUser" (click)="signOut()">Sign Out</ion-button>
+
 </ion-content>

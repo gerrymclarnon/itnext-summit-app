@@ -3,36 +3,19 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Next Game</ion-title>
+    <ion-title>PlayerManager</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="about-header">
-    <img src="assets/img/logo.svg" alt="PlayerManager Summit Logo">
+    <img src="assets/img/logo.svg" alt="ITNEXT Summit Logo">
   </div>
   <div padding class="about-info">
-    <h4>Next Game</h4>
+    <h4>Play to Manage! Manage to Play?</h4>
 
-    <ion-list lines="none" *ngIf="nextGame">
-      <ion-item>
-        <ion-icon name="football" slot="start"></ion-icon>
-        <ion-label>Kick Off</ion-label>
-        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'LT' }}
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="calendar" slot="start"></ion-icon>
-        <ion-label>Date</ion-label>
-        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'dddd D MMM YYYY' }}
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-label>Venue</ion-label>
-        {{nextGame.location}}
-      </ion-item>
-    </ion-list>
-
+    <p>
+      <strong>PLAY. MANAGE.</strong> Insert some football cliches here.
+    </p>
   </div>
 </ion-content>

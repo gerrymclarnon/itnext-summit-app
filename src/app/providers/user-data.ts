@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Events } from '@ionic/angular';
 import { Session } from './conference.model';
-import { get, set } from 'idb-keyval';
+import { get, set, del } from 'idb-keyval';
 
 export interface FavoriteSession {
   description: string;
@@ -19,8 +20,11 @@ export interface FavoriteSession {
 export class UserData {
   _favorites: FavoriteSession[] = [];
   _sessionIdsOfSentNotifications: string[] = [];
+  HAS_LOGGED_IN = 'hasLoggedIn';
 
-  constructor() {
+  constructor(
+    public events: Events
+  ) {
     this.getDataFromStorage();
   }
 
@@ -50,5 +54,39 @@ export class UserData {
 
   isNotificationNotSentForSession(session: FavoriteSession) {
     return !this._sessionIdsOfSentNotifications.includes(session.id);
+  }
+
+  login(username: string): any[] {
+    set(this.HAS_LOGGED_IN, true);
+    this.setUsername(username);
+    return this.events.publish('user:login');
+  }
+
+  signup(username: string): any[] {
+    set(this.HAS_LOGGED_IN, true);
+    this.setUsername(username);
+    return this.events.publish('user:signup');
+  }
+
+  logout(): any[] {
+    del(this.HAS_LOGGED_IN);
+    del('username');
+    return this.events.publish('user:logout');
+  }
+
+  setUsername(username: string): Promise<any> {
+    return set('username', username);
+  }
+
+  getUsername(): any {
+    return get('username').then((value) => {
+      return value;
+    });
+  }
+
+  isLoggedIn(): Promise<boolean> {
+    return get(this.HAS_LOGGED_IN).then((value) => {
+      return value === true;
+    });
   }
 }

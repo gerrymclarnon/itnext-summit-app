@@ -22,11 +22,37 @@
             </ion-item>
 
           </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
+
+        </ion-list>
+
+        <ion-list>
+          <ion-list-header>
+            Account
+          </ion-list-header>
+
+          <ion-menu-toggle auto-hide="false" *ngIf="!afAuth.auth.currentUser">
+            <ion-item button (click)="navigate('/login')">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                Sign In
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" *ngIf="afAuth.auth.currentUser">
+            <ion-item button (click)="signOut()">
+              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-label>
+                Sign Out
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" *ngIf="afAuth.auth.currentUser">
             <ion-item button (click)="buyTicket()">
               <ion-icon slot="start" [name]="'cart'"></ion-icon>
               <ion-label>
-                Buy Ticket
+                Pay as you Play
               </ion-label>
             </ion-item>
 

@@ -13,8 +13,8 @@ export function buyTicket() {
       data: {
         version: 2,
         supportedNetworks: networks,
-        countryCode: 'US',
-        merchantIdentifier: 'itnext-summit-2018.sample',
+        countryCode: 'GB',
+        merchantIdentifier: 'playermanager.sample',
         merchantCapabilities: ['supportsDebit', 'supportsCredit', 'supports3DS']
       }
     },
@@ -50,16 +50,16 @@ export function buyTicket() {
 
     const details = {
       total: {
-        label: 'Early Bird Ticket', amount: {currency: 'EUR', value: '50.00'}
+        label: 'Early Bird Ticket', amount: {currency: 'GBP', value: '4.00'}
       },
       displayItems: [
         {
-          label: 'Regular Ticket',
-          amount: {currency: 'EUR', value: '99.00'}
+          label: 'Regular Game',
+          amount: {currency: 'GBP', value: '5.00'}
         },
         {
           label: 'Early Bird Discount',
-          amount: {currency: 'EUR', value: '-49.00'}
+          amount: {currency: 'GBP', value: '-1.00'}
         }
       ]
     };

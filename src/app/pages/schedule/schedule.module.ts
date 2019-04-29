@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
+import {FirebaseUIModule} from 'firebaseui-angular';
+
 import { SchedulePage } from './schedule';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { SchedulePageRoutingModule } from './schedule-routing.module';
@@ -14,7 +16,8 @@ import { LetDirective } from '../../providers/let.directive';
     CommonModule,
     FormsModule,
     IonicModule,
-    SchedulePageRoutingModule
+    SchedulePageRoutingModule,
+    FirebaseUIModule
   ],
   declarations: [
     SchedulePage,

@@ -7,6 +7,7 @@ import { FavoriteSession, UserData } from './providers/user-data';
 import { ConferenceData } from './providers/conference-data';
 import { ToastOptions } from '@ionic/core';
 import { get, set } from 'idb-keyval';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
       icon: 'information-circle',
     },
   ];
+  loggedIn = false;
 
   constructor(
     private events: Events,
@@ -51,6 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private conferenceData: ConferenceData,
     private alertController: AlertController,
     private toastController: ToastController,
+    public afAuth: AngularFireAuth
   ) {
   }
 
@@ -179,5 +182,11 @@ export class AppComponent implements OnInit, OnDestroy {
       toast.present();
       set('iosBannerIsShown', true);
     }
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut().then(() => {
+      this.navigate('');
+    });
   }
 }

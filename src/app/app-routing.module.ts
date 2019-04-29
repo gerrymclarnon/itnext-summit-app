@@ -10,7 +10,13 @@ const routes: Routes = [
   {
     path: 'app',
     loadChildren: './pages/tabs-page/tabs-page.module#TabsModule'
-  }
+  },
+  {
+    path: 'login',
+    loadChildren: './pages/login/login.module#LoginModule'
+  },
+  { path: 'terms-of-service', loadChildren: './pages/terms-of-service/terms-of-service.module#TermsOfServicePageModule' },
+  { path: 'privacy-policy', loadChildren: './pages/privacy-policy/privacy-policy.module#PrivacyPolicyPageModule' }
 ];
 
 @NgModule({
