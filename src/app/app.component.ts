@@ -22,22 +22,22 @@ export class AppComponent implements OnInit, OnDestroy {
   appPages = [
     {
       title: 'Games',
-      url: '/app/tabs/schedule',
+      url: '/schedule',
       icon: 'calendar',
     },
     {
       title: 'Players',
-      url: '/app/tabs/speakers',
+      url: '/speakers',
       icon: 'contacts',
     },
     {
       title: 'Map',
-      url: '/app/tabs/map',
+      url: '/map',
       icon: 'map',
     },
     {
       title: 'About',
-      url: '/app/tabs/about',
+      url: '/about',
       icon: 'information-circle',
     },
   ];

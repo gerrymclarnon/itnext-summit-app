@@ -53,7 +53,7 @@ export class SpeakerListPage {
         {
           text: 'Copy Link',
           handler: () => {
-            navigator.clipboard.writeText(window.location.origin + `/app/tabs/(speakers:speaker-details/${speaker.id})`);
+            navigator.clipboard.writeText(window.location.origin + `/(speakers:speaker-details/${speaker.id})`);
           }
         },
         {

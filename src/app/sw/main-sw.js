@@ -65,7 +65,7 @@ self.addEventListener('notificationclick', (event) => {
     type: 'window'
   }).then((clientList) => {
     if (event.notification.tag && event.notification.tag === 'session' && clients.openWindow) {
-      return clients.openWindow(`/app/tabs/(schedule:session/${event.notification.data.id})`);
+      return clients.openWindow(`/(schedule:session/${event.notification.data.id})`);
     } else {
       for (let i = 0; i < clientList.length; i++) {
         const client = clientList[i];
