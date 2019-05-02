@@ -22,7 +22,7 @@ export class SchedulePage implements OnInit {
       this.games = data;
 
       if (this.games) {
-        this.nextGame = this.games[0];
+        this.nextGame = this.games[this.games.length - 1];
       }
     });
   }
