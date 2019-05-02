@@ -12,6 +12,13 @@ import { AngularFireMessaging, AngularFireMessagingModule } from '@angular/fire/
 import { AngularFireDatabase, AngularFireDatabaseModule, AngularFireList } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { AboutModule } from './pages/about/about.module';
+import { MapModule } from './pages/map/map.module';
+import { ScheduleModule } from './pages/schedule/schedule.module';
+import { SessionDetailModule } from './pages/session-detail/session-detail.module';
+import { SpeakerDetailModule } from './pages/speaker-detail/speaker-detail.module';
+import { SpeakerListModule } from './pages/speaker-list/speaker-list.module';
+
 interface Token {
   date: number;
   token: string;
@@ -63,7 +70,13 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    AboutModule,
+    MapModule,
+    ScheduleModule,
+    SessionDetailModule,
+    SpeakerDetailModule,
+    SpeakerListModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

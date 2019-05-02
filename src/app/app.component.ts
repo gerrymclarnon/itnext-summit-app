@@ -113,22 +113,6 @@ export class AppComponent implements OnInit, OnDestroy {
     toast.present();
   }
 
-  selectTab(index: number, fallbackUrl: string) {
-    const tabs = document.querySelector('ion-tabs');
-    let promise: Promise<any> = null;
-    if (tabs) {
-      promise = tabs.componentOnReady();
-      promise.then(() => {
-        return tabs.select(index.toString());
-      });
-    } else {
-      promise = this.navigate(fallbackUrl);
-    }
-    return promise.then(() => {
-      return this.menu.toggle();
-    });
-  }
-
   navigate(url: string) {
     return this.router.navigateByUrl(url);
   }
