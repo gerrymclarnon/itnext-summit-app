@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { ConferenceData } from '../../providers/conference-data';
 
@@ -12,7 +12,6 @@ declare var google: any;
   selector: 'page-map',
   templateUrl: 'map.html',
   styleUrls: ['./map.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class MapPage {
 

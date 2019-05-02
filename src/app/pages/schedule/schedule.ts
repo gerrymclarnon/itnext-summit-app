@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
 import {GameService} from '../../providers/game-service';
 import {Game} from '../../models/Game';
@@ -7,9 +7,8 @@ import {Game} from '../../models/Game';
   selector: 'page-schedule',
   templateUrl: 'schedule.html',
   styleUrls: ['./schedule.scss'],
-  encapsulation: ViewEncapsulation.None
 })
-export class SchedulePage {
+export class SchedulePage implements OnInit {
   conferenceDate$;
   games: Game[] = [];
   nextGame: Game = null;
@@ -26,5 +25,8 @@ export class SchedulePage {
         this.nextGame = this.games[0];
       }
     });
+  }
+
+  ngOnInit() {
   }
 }

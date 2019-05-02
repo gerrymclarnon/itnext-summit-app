@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConferenceData } from '../../providers/conference-data';
 import { Observable } from 'rxjs';
@@ -10,7 +10,6 @@ import { Speaker } from '../../providers/conference.model';
   selector: 'page-speaker-detail',
   templateUrl: 'speaker-detail.html',
   styleUrls: ['./speaker-detail.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class SpeakerDetailPage {
   speaker$: Observable<Speaker>;

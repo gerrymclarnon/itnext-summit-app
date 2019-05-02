@@ -14,7 +14,7 @@
             Navigate
           </ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item button (click)="navigate(p.url)">
+            <ion-item [routerLink]="p.url">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
@@ -31,7 +31,7 @@
           </ion-list-header>
 
           <ion-menu-toggle auto-hide="false" *ngIf="!afAuth.auth.currentUser">
-            <ion-item button (click)="navigate('/login')">
+            <ion-item routerLink="/login">
               <ion-icon slot="start" name="log-in"></ion-icon>
               <ion-label>
                 Sign In

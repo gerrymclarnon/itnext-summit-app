@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 import { ConferenceData } from '../../providers/conference-data';
@@ -8,7 +8,6 @@ import { ConferenceData } from '../../providers/conference-data';
   selector: 'page-schedule-filter',
   templateUrl: 'schedule-filter.html',
   styleUrls: ['./schedule-filter.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class ScheduleFilterPage implements AfterViewInit {
 

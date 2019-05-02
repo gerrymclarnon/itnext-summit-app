@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -12,7 +12,6 @@ import {Player} from '../../models/Player';
   selector: 'page-speaker-list',
   templateUrl: 'speaker-list.html',
   styleUrls: ['./speaker-list.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class SpeakerListPage {
   openSpeakerTwitter = openSpeakerTwitter;

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,6 @@ import {AngularFireAuth} from '@angular/fire/auth';
   selector: 'page-login',
   templateUrl: 'login.html',
   styleUrls: ['./login.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class LoginPage {
   login: UserOptions = { username: '', password: '' };

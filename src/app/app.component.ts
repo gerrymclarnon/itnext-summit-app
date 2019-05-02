@@ -13,7 +13,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit, OnDestroy {
   buyTicket = buyTicket;
@@ -22,22 +22,22 @@ export class AppComponent implements OnInit, OnDestroy {
   appPages = [
     {
       title: 'Games',
-      url: '/app/tabs/(schedule:schedule)',
+      url: '/app/tabs/schedule',
       icon: 'calendar',
     },
     {
       title: 'Players',
-      url: '/app/tabs/(speakers:speakers)',
+      url: '/app/tabs/speakers',
       icon: 'contacts',
     },
     {
       title: 'Map',
-      url: '/app/tabs/(map:map)',
+      url: '/app/tabs/map',
       icon: 'map',
     },
     {
       title: 'About',
-      url: '/app/tabs/(about:about)',
+      url: '/app/tabs/about',
       icon: 'information-circle',
     },
   ];
@@ -119,7 +119,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (tabs) {
       promise = tabs.componentOnReady();
       promise.then(() => {
-        return tabs.select(index);
+        return tabs.select(index.toString());
       });
     } else {
       promise = this.navigate(fallbackUrl);
