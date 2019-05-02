@@ -9,7 +9,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",
