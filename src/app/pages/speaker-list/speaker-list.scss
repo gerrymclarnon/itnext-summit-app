@@ -23,3 +23,59 @@ page-speaker-list {
     padding: 0;
   }
 }
+
+.about-header {
+  background: var(--ion-color-dark);
+  background-size: cover;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  color: var(--ion-color-light);
+}
+
+.about-header ion-item {
+  padding: 0px;
+  --ion-background-color: var(--ion-color-dark);
+  background: var(--ion-color-dark);
+  color: var(--ion-color-light);
+  text-align: center;
+}
+
+.about-header ion-label {
+  font-size: 20px;
+  text-align: center;
+}
+
+.about-header img {
+  max-width: 300px;
+  padding: 25px;
+}
+
+.about-info {
+  color: var(--ion-color-light);
+}
+
+.about-info p {
+  color: var(--ion-color-light);
+  text-align: left;
+}
+
+.about-info ion-icon {
+  color: var(--ion-color-primary);
+}
+
+.ios .about-info {
+  text-align: center;
+}
+
+.next-game-header {
+  //background: var(--ion-color-dark);
+  //background-size: cover;
+  //color: var(--ion-color-light);
+  padding:0px;
+  min-width: 200px;
+}
+

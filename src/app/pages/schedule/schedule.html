@@ -19,39 +19,28 @@
 </ion-header>
 
 <ion-content>
-<!--  <div class="about-header">-->
-<!--    <img src="assets/img/logo.svg" alt="PlayerManager Summit Logo">-->
-<!--  </div>-->
+  <div class="about-header">
+    <div padding>
+      <ion-list class="next-game-header" lines="none" *ngIf="nextGame">
+        <ion-item>
+          <ion-label>{{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'LT' }} {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'dddd D MMM YYYY' }}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{nextGame.location}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
   <div padding class="about-info">
-    <h4>Next Game</h4>
-
-    <ion-list lines="none" *ngIf="nextGame">
-      <ion-item>
-        <ion-icon name="football" slot="start"></ion-icon>
-        <ion-label>Kick Off</ion-label>
-        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'LT' }}
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="calendar" slot="start"></ion-icon>
-        <ion-label>Date</ion-label>
-        {{ nextGame.datetime.seconds | amFromUnix | amDateFormat: 'dddd D MMM YYYY' }}
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-label>Venue</ion-label>
-        {{nextGame.location}}
-      </ion-item>
-    </ion-list>
-
     <ion-list *ngIf="nextGame">
       <ion-grid fixed>
         <ion-row align-items-stretch>
           <ion-col size="12" size-md="6" *ngFor="let player of nextGame.players">
             <ion-card class="speaker-card">
               <ion-card-header>
-                <ion-item no-padding detail="false" lines="none" button [href]="'/(speakers:speaker-details/'+ player.id">
+<!--                <ion-item no-padding detail="false" lines="none" button [href]="'/(speakers:speaker-details/'+ player.id">-->
+                <ion-item detail="false" lines="none" routerLink="/speakers/speaker-details/{{player.title}}">
                   <ion-avatar slot="start">
                     <!--                  <img [src]="speaker.profilePic" alt="Speaker profile pic">-->
                   </ion-avatar>
